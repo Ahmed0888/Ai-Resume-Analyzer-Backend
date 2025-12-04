@@ -1,7 +1,13 @@
+const path = require("path");
 const pdfjsLib = require("pdfjs-dist/legacy/build/pdf.js");
 
+// IMPORTANT: worker ka path set karo
+pdfjsLib.GlobalWorkerOptions.workerSrc = path.join(
+  __dirname,
+  "../node_modules/pdfjs-dist/legacy/build/pdf.worker.js"
+);
+
 async function extractTextFromBuffer(buffer) {
-  // buffer: Node Buffer
   const uint8 = new Uint8Array(buffer);
   const loadingTask = pdfjsLib.getDocument({ data: uint8 });
   const pdf = await loadingTask.promise;
