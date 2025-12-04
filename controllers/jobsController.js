@@ -208,7 +208,7 @@
 //         res.status(500).json({ success: false, message: 'Server error' });
 //     }
 // };
-const Job = require("../models/Job");
+const Job = require("../models/job");
 
 // INLINE getUserId - Extract from headers or fallback
 const getUserId = (req) =>
