@@ -5,33 +5,6 @@ const supabase = require("../utils/supabaseClient");
 const axios = require("axios");
 const path = require("path");
 
-// const uploadToSupabase = async (buffer, filename,req) => {
-//   const bucket = process.env.SUPABASE_BUCKET || "resumes";
-//   const key = `resumes/${Date.now()}_${filename}`;
-
-//   const { data, error } = await supabase.storage.from(bucket).upload(key, buffer, {
-//     contentType: "application/pdf",
-//     upsert: false
-    
-//   });
-// // const { data, error } = await supabase.storage
-// //   .from(bucket)
-// //   .upload(key, buffer, {
-// //     contentType: "application/pdf",
-// //     upsert: false,
-// //     metadata: {
-// //       user_id: req.user.id  // <-- add this
-// //     }
-// //   });
-
-//   if (error) throw error;
-
-//   const { publicURL, error: urlErr } = supabase.storage.from(bucket).getPublicUrl(key);
-//   if (urlErr) throw urlErr;
-
-//   return { key, publicURL };
-// };
-
 
 
 const uploadToSupabase = async (buffer, filename, req) => {

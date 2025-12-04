@@ -15,7 +15,7 @@
 const express = require('express');
 const router = express.Router();
 const jobsController = require('../controllers/jobsController');
-const auth = require('../middleware/auth'); // Tumhara auth middleware
+const auth = require('../middleware/auth'); //  auth middleware
 
 router.get('/', auth, jobsController.getJobs);
 router.post('/', auth, jobsController.createJob);
