@@ -4,7 +4,7 @@ const { register, login } = require("../controllers/authController");
 const auth = require("../middleware/auth"); // ✅ IMPORT KARO!
 
 // Register & Login (Public)
-router.post("/", register);
+router.post("/register", register);
 router.post("/login/", login);
 
 // ✅ VERIFY TOKEN ENDPOINT (Protected)
