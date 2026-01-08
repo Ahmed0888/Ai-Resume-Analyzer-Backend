@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(fileUpload({ limits: { fileSize: 10 * 1024 * 1024 } }));
 
 //  Static Files
-app.use(express.static(path.join(__dirname, "../public")));
+// app.use(express.static(path.join(__dirname, "../public")));
 
 // Database
 const MONGO_URI = process.env.MONGO_URI;
@@ -37,11 +37,11 @@ app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/resume", require("./routes/resumeRoutes"));
 app.use("/api/jobs", require("./routes/jobs")); // ✅ SINGLE FILE
 
-// const PORT = process.env.PORT || 3000;
-// app.listen(PORT, () =>
-//   console.log(`Server running on port http://localhost:${PORT}`)
-// );
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () =>
+  console.log(`Server running on port http://localhost:${PORT}`)
+);
 
 //  IMPORTANT: Express app export karo
 // vercel ya kisi aur serverless platform ke liye
-module.exports = app;
+// module.exports = app;
